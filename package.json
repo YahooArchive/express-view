@@ -1,0 +1,54 @@
+{
+    "name"       : "express-view",
+    "description": "Express view class for synthetic views.",
+    "version"    : "0.0.1-alfa",
+    "homepage"   : "https://github.com/caridy/express-view",
+
+    "keywords": [
+        "express", "view", "template", "modown", "engine", "javascript"
+    ],
+
+    "author": {
+        "name" : "Caridy Patino",
+        "email": "caridy@gmail.com",
+        "url"  : "http://caridy.name/"
+    },
+
+    "main": "index",
+
+    "directories": {
+        "lib"    : "./lib",
+        "example": "./examples"
+    },
+
+    "repository": {
+        "type": "git",
+        "url" : "git://github.com/caridy/express-view.git"
+    },
+
+    "bugs": {
+        "url": "https://github.com/caridy/express-view/issues"
+    },
+
+    "engines": {
+        "node": ">=0.8.x",
+        "npm" : ">=1.2.10"
+    },
+
+    "peerDependencies": {
+        "express": "3.x"
+    },
+
+    "devDependencies": {
+        "chai"               : "*",
+        "express"            : "3.x",
+        "istanbul"           : "*",
+        "mocha"              : "*",
+        "mockery"            : "*",
+        "xunit-file"         : "*"
+    },
+
+    "scripts": {
+        "test": "./node_modules/istanbul/lib/cli.js cover -- ./node_modules/.bin/_mocha tests/*.js --reporter spec"
+    }
+}
