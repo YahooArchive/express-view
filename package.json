@@ -1,7 +1,7 @@
 {
     "name"       : "express-view",
     "description": "Express view class for synthetic views.",
-    "version"    : "0.0.1-alfa",
+    "version"    : "0.0.1-beta",
     "homepage"   : "https://github.com/caridy/express-view",
 
     "keywords": [
@@ -33,6 +33,10 @@
     "engines": {
         "node": ">=0.8.x",
         "npm" : ">=1.2.10"
+    },
+
+    "dependencies": {
+        "debug": "*"
     },
 
     "peerDependencies": {
