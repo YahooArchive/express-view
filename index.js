@@ -11,7 +11,6 @@
 var View = require('./lib/view'),
     debug = require('debug')('express:lang');
 
-
 function extendApp(app) {
     // storing a reference to the original view class
     // implementation so we can fallback to that if
@@ -29,9 +28,6 @@ function extendApp(app) {
     Object.defineProperty(app, '@view', {
         value: true
     });
-
-    // Modifies the Express `app`.
-    app.set('view', ViewShim);
 
     function ViewShim(name, options) {
         var v, o;
@@ -74,5 +70,10 @@ function extendApp(app) {
         };
     }
 
+    // Modifies the Express `app`.
+    app.set('view', ViewShim);
+
     return app;
 }
+
+exports.extend    = extendApp;
