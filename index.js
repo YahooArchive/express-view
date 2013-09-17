@@ -9,7 +9,7 @@
 'use strict';
 
 var View = require('./lib/view'),
-    debug = require('debug')('express:lang');
+    debug = require('debug')('express:view');
 
 function extendApp(app) {
     // storing a reference to the original view class
