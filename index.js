@@ -11,7 +11,7 @@
 var View = require('./lib/view'),
     debug = require('debug')('express:view');
 
-function extendApp(app) {
+function expressView(app) {
     // storing a reference to the original view class
     // implementation so we can fallback to that if
     // there is not a synthetic template available
@@ -26,7 +26,7 @@ function extendApp(app) {
 
     // Brand.
     Object.defineProperty(app, '@view', {
-        value: true
+        value: expressView
     });
 
     function ViewShim(name, options) {
@@ -76,4 +76,4 @@ function extendApp(app) {
     return app;
 }
 
-exports.extend    = extendApp;
+exports.extend = expressView;
