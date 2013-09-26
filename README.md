@@ -1,33 +1,55 @@
 Express View
 ============
 
-WIP
-
+`express-view` ships with a custom `express` view class implementation which allows to control `res.render()` calls. Normally, `express` along with some specific view engine can do the work of compiling and rendering templates on the server side, but `express-view` span that to support the use of compiled-to-javascript templates that were already provisioned in memory thru a filesystem abstraction component like `locator`.
 
 Usage
 -----
-
-### Extending express functionalities
-
-`express-view` is a conventional `express` extension, which means it will extend
-the functionalities provided on `express` by augmenting the express app instance.
-
-Here is an example of how to extend an `express` app with `express-view`:
 
 ```
 var express = require('express'),
     expview = require('express-view'),
     app = express();
 
-// mounting a filesystem attraction
-app.set('locator', locatorObj);
-
-// calling a static method to extend the `express` app instance
+app.set('locator', myLocatorObj); // filesystem abstraction layer
 expview.extend(app);
 ```
 
-In the example above, when calling `res.render('foo')` to response to a request, `foo` will be treated as a synthetic view name and it will be looked up thru `locator`. If the template was not compiled by `locator`, then it will fallback to the default implementation in express, which involves filesystem interaction to try to resolve the view.
+With the code above, there is not need to define anything else in express in terms of engine, or path to views, or anything else, all that is irrelevant since `express-view` will completely take over the `express`'s template resolution process, and will drive it thru `myLocatorObj` abtraction, which means you can call `res.render('foo')` in your middleware, and `express-view` will resolve `foo` template. `express-view` will try to find `foo` template thru the locator instance API, and it will fallback to the regular express implementation if the template is not found, in case you need to mix-in synthetic views and traditional views.
 
+### Layout
+
+You can also define a default layout:
+
+```
+app.set('layout', 'name-of-the-layout-template');
+```
+
+If you use `layout` as above, or just by providing the `layout` value when calling `res.render('foo', { layout: 'bar' })`, `express-view` will resolve the `view`, render it, and the result of that operation will be passed into the layout render thru a context variable called `outlet`, this is similar to `emberjs`. In a handlebars template, you will define the `outlet` like this:
+
+```
+<div>{{{outlet}}}</div>
+```
+
+### Bundles
+
+Locator organizes templates per bundle (which are usually NPM dependencies that contain compiled templates). By default, the root bundle in your locator object will be used to resolve templates, and you have the ability to specify which bundle should be used to resolve the template::
+
+```
+res.render('foo', {
+    bundle: 'name-of-the-bundle'
+});
+```
+
+If the template `foo` is not found in the specified bundle, `express-view` will look into the root bundle, or fallback to the traditional express view resolution process.
+
+### More info
+
+Under the `example` folder you can see a more detailed example of how to use `express-view`.
+
+Also, for more information about the new feature in express that powers `express-view`, read this:
+
+ * http://caridy.name/blog/2013/05/bending-express-to-support-synthetic-views/
 
 License
 -------
