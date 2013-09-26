@@ -1,7 +1,7 @@
 {
     "name"       : "express-view",
     "description": "Express view class for synthetic views.",
-    "version"    : "0.0.1-rc",
+    "version"    : "0.0.1-rc2",
     "homepage"   : "https://github.com/caridy/express-view",
 
     "keywords": [
