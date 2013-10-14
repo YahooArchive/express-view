@@ -59,3 +59,10 @@ See the [LICENSE file][] for license text and copyright information.
 
 
 [LICENSE file]: https://github.com/caridy/express-view/blob/master/LICENSE
+
+Contribute
+----------
+
+See the [CONTRIBUTING.md file][] for more information.
+
+[CONTRIBUTING.md file]: https://github.com/express-view/blob/master/CONTRIBUTING.md
