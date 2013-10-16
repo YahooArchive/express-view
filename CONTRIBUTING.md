@@ -15,7 +15,7 @@ Dev mode installation
 ---------------------
 
 - The main source files are located under `lib/`.
-- Unit tests are located under `tests/unit/*`.
+- Unit tests are located under `tests/units/*`.
 - Examples are located under `examples/`.
 
 To install the dependencies:
