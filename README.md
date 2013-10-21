@@ -1,6 +1,8 @@
 Express View
 ============
 
+[![Build Status](https://travis-ci.org/yahoo/express-view.png?branch=master)](https://travis-ci.org/yahoo/express-view)
+
 `express-view` ships with a custom `express` view class implementation which allows to control `res.render()` calls. Normally, `express` along with some specific view engine can do the work of compiling and rendering templates on the server side, but `express-view` span that to support the use of compiled-to-javascript templates that were already provisioned in memory thru a filesystem abstraction component like `locator`.
 
 Usage
