@@ -19,11 +19,6 @@ function expressView(app) {
 
     if (app['@view']) { return app; }
 
-    if (!app.get('locator')) {
-        debug('Call `app.set("locator", locatorObj)` before extending the `express` app with `express-lang`');
-        throw new Error('Locator instance should be mounted');
-    }
-
     // Brand.
     Object.defineProperty(app, '@view', {
         value: expressView
@@ -31,6 +26,11 @@ function expressView(app) {
 
     function ViewShim(name, options) {
         var v, o;
+
+        if (!app.get('locator')) {
+            debug('Call `app.set("locator", locatorObj)` before listening for traffic on the `express` app.');
+            throw new Error('Locator instance should be mounted');
+        }
 
         options = options || {};
         options.locator = app.get('locator');
