@@ -28,7 +28,7 @@ function expressView(app) {
         var v, o;
 
         if (!app.get('locator')) {
-            debug('Call `app.set("locator", locatorObj)` before extending the `express` app with `express-lang`');
+            debug('Call `app.set("locator", locatorObj)` before listening for traffic on the `express` app.');
             throw new Error('Locator instance should be mounted');
         }
 
