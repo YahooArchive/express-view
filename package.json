@@ -1,7 +1,7 @@
 {
     "name"       : "express-view",
     "description": "Express view class for synthetic views.",
-    "version"    : "0.0.1-rc2",
+    "version"    : "0.0.1-rc3",
     "homepage"   : "https://github.com/caridy/express-view",
 
     "keywords": [
@@ -13,6 +13,9 @@
         "email": "caridy@gmail.com",
         "url"  : "http://caridy.name/"
     },
+    "contributors": [
+        "alberto chan <imalberto@gmail.com>"
+    ],
 
     "main": "index",
 
