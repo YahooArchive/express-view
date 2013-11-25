@@ -4,6 +4,8 @@ Express View Change History
 @NEXT@
 ----------------------
 
+* PR #6: Fix test script to run on Windows
+
 0.0.1-rc3 (2013-10-01)
 ----------------------
 
