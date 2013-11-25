@@ -58,7 +58,7 @@
     },
 
     "scripts": {
-        "test": "./node_modules/istanbul/lib/cli.js cover -- ./node_modules/.bin/_mocha tests/units/*.js --reporter spec",
-        "lint": "node ./node_modules/.bin/jshint --config ./node_modules/yui-lint/jshint.json ./*.js ./lib/*.js"
+        "test": "istanbul cover -- ./node_modules/mocha/bin/_mocha tests/units/*.js --reporter spec",
+        "lint": "jshint --config ./node_modules/yui-lint/jshint.json ./*.js ./lib/*.js"
     }
 }
