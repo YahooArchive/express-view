@@ -1,7 +1,7 @@
 {
     "name"       : "express-view",
     "description": "Express view class for synthetic views.",
-    "version"    : "0.0.1-rc3",
+    "version"    : "0.1.0",
     "homepage"   : "https://github.com/caridy/express-view",
 
     "keywords": [
@@ -14,7 +14,8 @@
         "url"  : "http://caridy.name/"
     },
     "contributors": [
-        "alberto chan <imalberto@gmail.com>"
+        "alberto chan <imalberto@gmail.com>",
+        "Drew Folta <drew@folta.net>"
     ],
 
     "main": "index",
@@ -26,11 +27,11 @@
 
     "repository": {
         "type": "git",
-        "url" : "git://github.com/caridy/express-view.git"
+        "url" : "git://github.com/yahoo/express-view.git"
     },
 
     "bugs": {
-        "url": "https://github.com/caridy/express-view/issues"
+        "url": "https://github.com/yahoo/express-view/issues"
     },
 
     "engines": {
@@ -43,12 +44,12 @@
     },
 
     "peerDependencies": {
-        "express": "3.x"
+        "express": ">=3.x"
     },
 
     "devDependencies": {
         "chai"               : "*",
-        "express"            : "3.x",
+        "express"            : "4.x",
         "istanbul"           : "*",
         "mocha"              : "*",
         "mockery"            : "*",
